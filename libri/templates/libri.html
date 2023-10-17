@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %} Elenco Libri {% endblock %}
+{% block ordinaSubitoBotton %}  {% endblock %}
+{% block main %}
+    <div class="container">
+        <div class="row">
+            {% for libro in libri %}
+            <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                    <a href="#"><img src="/{{libro.immagine}}" class="card-img-top" alt="..."></a>
+                    <div class="card-body">
+                        <h5 class="card-title">Titolo: {{ libro.titolo }}</h5>
+                        <p class="card-text">Descrizione: <br> {{ libro.descrizione }} </p>
+                        <p class="card-text"><b>€ {{ libro.prezzo }} </b></p>
+                        <a href="{{ urls }} /libri/acquista/" class="btn btn-primary">Acquista</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+
+
+
+
+
